@@ -1,0 +1,247 @@
+@import "../../Styles/variables";
+
+$zero: "00";
+$one: "01";
+$two: "02";
+$three: "03";
+$i: 1;
+
+// --------- //
+// ---Nav--- //
+// --------- //
+nav {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 0 0;
+    overflow-x: hidden;
+
+    //Links Media Query
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+
+    @media (max-width: 640px) {
+      padding: 25px;
+    }
+  }
+}
+
+// ---------- //
+// ---Logo--- //
+// ---------- //
+nav {
+  //Logo
+  .logo {
+    padding-left: 55px;
+    cursor: pointer;
+    touch-action: none;
+
+    //Logo Media Query
+    @media (max-width: 768px) {
+      padding: 0 0 0 40px;
+    }
+
+    @media (max-width: 640px) {
+      padding: 0;
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+
+// ----------- //
+// ---Links--- //
+// ----------- //
+nav {
+  // Links
+  .links {
+    background-color: rgba($color: #ffffff, $alpha: 0.1);
+    backdrop-filter: blur(20px);
+    padding: 0 12% 0 5%;
+
+    .close {
+      display: none;
+    }
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+
+      // Set Link Number
+      @each $content in $zero, $one, $two, $three {
+        li:nth-child(#{$i}) {
+          .link::before {
+            content: $content;
+            font-weight: bold;
+            margin-right: 8px;
+          }
+        }
+
+        $i: $i + 1;
+      }
+
+      li {
+        margin-left: 50px;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: 500ms ease;
+          height: 3px;
+          width: 100%;
+          background-color: white;
+          transform: scale(0);
+          opacity: 0;
+        }
+
+        &:hover {
+          &:after {
+            transform: scale(1);
+            opacity: 0.5;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-family: $barlow-condensed;
+          font-size: 16px;
+          letter-spacing: 2.7px;
+          text-transform: uppercase;
+          position: relative;
+
+          .link {
+            padding: 40px 0;
+
+            //Link Media Query
+            @media (max-width: 1024px) {
+              &:before {
+                display: none;
+              }
+            }
+          }
+        }
+
+        //li Media Query
+        @media (max-width: 768px) {
+          margin-left: 37px;
+        }
+      }
+
+      .active-page {
+        &:after {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+
+    //Links Media Query
+    @media (max-width: 1024px) {
+      padding: 0 50px 0 0;
+    }
+
+    @media (max-width: 640px) {
+      padding: 100px 0 0 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100vh;
+      max-width: 350px;
+      // transform: translateX(100%);
+      // transition: 500ms ease;
+
+      .close {
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        display: block;
+        position: absolute;
+        right: 28px;
+        top: 30px;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          width: 100%;
+          margin: 0;
+          height: 30px;
+          margin-bottom: 19px;
+          text-align: left;
+
+          display: flex;
+          align-items: center;
+
+          &:after {
+            right: 0;
+            left: initial;
+            height: 100%;
+            width: 4px;
+          }
+
+          .link {
+            padding: 0 !important;
+            margin-left: 30px;
+
+            display: flex;
+            &:before {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // .links-active {
+  //   transform: translateX(0%);
+  // }
+}
+
+// ---------- //
+// ---Line--- //
+// ---------- //
+nav {
+  .line-space {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.247);
+    margin-left: 5%;
+    margin-right: -30px;
+    z-index: 1;
+
+    //Line Media Query
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+// ----------- //
+// ---Burger---//
+// ----------- //
+nav {
+  .burger {
+    display: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+    @media (max-width: 640px) {
+      display: block;
+    }
+  }
+}
