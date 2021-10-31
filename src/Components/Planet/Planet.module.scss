@@ -1,0 +1,268 @@
+@import "../../Styles/variables";
+
+.main {
+  color: $secondary;
+  width: 100%;
+  max-width: 1440px;
+
+  //--------------//
+  //--- Tablet ---//
+  //--------------//
+  .left {
+    @media (max-width: 768px) {
+      .image {
+        img {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+
+    //--------------//
+    //--- Mobile ---//
+    //--------------//
+    @media (max-width: 425px) {
+      .image {
+        img {
+          width: 170px;
+          height: 170px;
+        }
+      }
+    }
+
+    //---------------//
+    //--- Desktop ---//
+    //---------------//
+    @media (min-width: 769px) {
+      display: flex;
+      // align-items: flex-end;
+      padding-top: 50px;
+
+      .image {
+        img {
+          width: 445px;
+          height: 445px;
+        }
+      }
+    }
+  }
+
+  .right {
+    .planetList {
+      margin-bottom: 37px;
+      .list {
+        list-style-type: none;
+        font-family: $barlow-condensed;
+        display: flex;
+
+        font-size: 14px;
+        gap: 35px;
+        justify-content: flex-start;
+
+        li {
+          cursor: pointer;
+          position: relative;
+          padding-bottom: 14px;
+
+          span {
+            width: 100%;
+            height: 3px;
+            background-color: rgba($color: #ffffff, $alpha: 1);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    .planetDetails {
+      .line {
+        background-color: #383b4b;
+        height: 1px;
+        width: 100%;
+        margin: 32px 0;
+      }
+
+      .bottomDetails {
+        h6 {
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    //--------------//
+    //--- Laptop ---//
+    //--------------//
+    @media (max-width: 1024px) {
+      .planetList {
+        margin-bottom: 32px;
+
+        .list {
+          justify-content: center;
+          font-size: 14px;
+          gap: 35px;
+
+          li {
+            padding-bottom: 14px;
+          }
+        }
+      }
+
+      .planetDetails {
+        h2 {
+          margin-bottom: 8px;
+        }
+
+        .line {
+          background-color: #383b4b;
+          height: 1px;
+          width: 100%;
+          margin: 49px 0 28px 0;
+        }
+
+        .bottomDetails {
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+
+    //--------------//
+    //--- Tablet ---//
+    //--------------//
+    @media (max-width: 768px) {
+      padding-top: 60px;
+      padding: 53px 100px 0 100px;
+
+      .planetList {
+        margin-bottom: 32px;
+        .list {
+          font-size: 14px;
+          gap: 35px;
+
+          li {
+            padding-bottom: 14px;
+          }
+        }
+      }
+
+      .planetDetails {
+        h2 {
+          margin-bottom: 8px;
+        }
+
+        .line {
+          background-color: #383b4b;
+          height: 1px;
+          width: 100%;
+          margin: 49px 0 28px 0;
+        }
+
+        .bottomDetails {
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+
+    //--------------//
+    //--- Mobile ---//
+    //--------------//
+    @media (max-width: 640px) {
+      padding: 26px 24px 0 24px;
+
+      .planetList {
+        margin-bottom: 20px;
+        .list {
+          font-size: 14px;
+          gap: 27px;
+
+          li {
+            padding-bottom: 14px;
+          }
+        }
+      }
+
+      .planetDetails {
+        h2 {
+          margin-bottom: 1px;
+        }
+        .bottomDetails {
+          display: initial;
+          h6 {
+            margin-bottom: 12px;
+          }
+          .distance {
+            margin-bottom: 32px;
+          }
+
+          .time {
+          }
+        }
+      }
+    }
+
+    //---------------//
+    //--- Desktop ---//
+    //---------------//
+    @media (min-width: 769px) {
+      .planetDetails {
+        h2 {
+          margin-bottom: 14px;
+        }
+
+        .line {
+          margin: 54px 0 28px 0;
+        }
+
+        .bottomDetails {
+          display: flex;
+
+          h6 {
+            margin-bottom: 12px;
+          }
+          .distance {
+            margin-bottom: 32px;
+            margin-right: 79px;
+          }
+        }
+      }
+    }
+  }
+
+  //---------------//
+  //--- Desktop ---//
+  //---------------//
+  @media (min-width: 769px) {
+    display: flex;
+    gap: 157px;
+    padding: 0 165px;
+    text-align: left;
+  }
+
+  //---------------------//
+  //--- Small Desktop ---//
+  //---------------------//
+  @media (max-width: 1366px) {
+    padding: 0 55px;
+    gap: 100px;
+  }
+
+  //--------------//
+  //--- Laptop ---//
+  //--------------//
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  //--------------//
+  //--- Tablet ---//
+  //--------------//
+  @media (max-width: 768px) {
+    padding-bottom: 62px;
+  }
+}

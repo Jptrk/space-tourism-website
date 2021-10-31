@@ -21,6 +21,10 @@ nav {
     padding: 40px 0 0 0;
     overflow-x: hidden;
 
+    p {
+      font-family: $barlow-condensed !important;
+    }
+
     //Links Media Query
     @media (max-width: 768px) {
       padding: 0;
@@ -40,7 +44,6 @@ nav {
   .logo {
     padding-left: 55px;
     cursor: pointer;
-    touch-action: none;
 
     //Logo Media Query
     @media (max-width: 768px) {

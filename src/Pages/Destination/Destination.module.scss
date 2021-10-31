@@ -1,0 +1,85 @@
+@import "../../Styles/variables";
+
+.main {
+  min-height: 100vh;
+  background-size: cover;
+  text-align: center;
+  padding-top: 212px;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+
+  background-image: url("../../Assets/destination/background-destination-desktop.jpg");
+
+  .header {
+    margin-bottom: 64px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .headerlabel {
+      padding-left: 160px;
+      text-align: left;
+
+      span {
+        font-weight: bold;
+        margin-right: 18px;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .planet {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 1366px) {
+    padding-bottom: 0;
+    .header {
+      .headerlabel {
+        text-align: left;
+        padding-left: 55px;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .header {
+      .headerlabel {
+        text-align: left;
+        padding-left: 39px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    background-image: url("../../Assets/destination/background-destination-tablet.jpg");
+    padding-top: 136px;
+
+    .header {
+      margin-bottom: 60px;
+      .headerlabel {
+        text-align: left;
+        padding-left: 39px;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      .headerlabel {
+        text-align: center;
+        padding-left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    background-image: url("../../Assets/destination/background-destination-mobile.jpg");
+    padding-top: 88px;
+
+    .header {
+      margin-bottom: 32px;
+    }
+  }
+}

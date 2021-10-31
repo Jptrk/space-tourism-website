@@ -31,6 +31,11 @@ const Navbar = () => {
     });
   }, []);
 
+  //setShow to false on location change
+  useEffect(() => {
+    windowSize <= 640 && setShow(false);
+  }, [location, windowSize]);
+
   //Variants
   const links = {
     hidden: {
@@ -74,7 +79,7 @@ const Navbar = () => {
             initial="hidden"
             animate="show"
             className="line-space"
-          ></motion.div>
+          />
           <motion.div
             variants={links}
             initial={show ? "hidden" : "hidden"}
@@ -93,8 +98,12 @@ const Navbar = () => {
                   <p className="link">Home</p>
                 </Link>
               </li>
-              <li>
-                <Link to="/">
+              <li
+                className={`${
+                  location === "/destination" ? "active-page" : ""
+                }`}
+              >
+                <Link to="/destination">
                   <p className="link">Destination</p>
                 </Link>
               </li>

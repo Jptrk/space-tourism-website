@@ -1,15 +1,19 @@
-import "./Home.scss";
+//Style
+import styles from "./Home.module.scss";
+//Library
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <main className="main">
+    <main className={styles.main}>
       <motion.article
+        className={styles.article}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        <div className="copy-content">
+        <div className={styles.copyContent}>
           <h5>SO, YOU WANT TO TRAVEL TO</h5>
           <h1>SPACE</h1>
           <p>
@@ -19,8 +23,10 @@ const Home = () => {
             world experience!
           </p>
         </div>
-        <div className="explore-button">
-          <h4>EXPLORE</h4>
+        <div className={styles.exploreButton}>
+          <Link to="/destination" className={styles.explore}>
+            <h4>EXPLORE</h4>
+          </Link>
         </div>
       </motion.article>
     </main>
