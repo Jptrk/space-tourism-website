@@ -1,6 +1,7 @@
 export const inout = {
   initial: {
     opacity: 0,
+    transition: { duration: 0.5 },
   },
   in: {
     opacity: 1,
