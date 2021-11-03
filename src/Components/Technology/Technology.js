@@ -38,7 +38,6 @@ const Technology = () => {
           <AnimateSharedLayout>
             {data.technology.map((tech, key) => (
               <div
-                className={styles.navItem}
                 onClick={() => setTechSelected(key)}
                 key={key}
                 className={
