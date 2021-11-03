@@ -43,21 +43,29 @@
         align-items: center;
         user-select: none;
         cursor: pointer;
+        position: relative;
+      }
+
+      .activeColor {
+        color: black;
+        z-index: 1;
+      }
+
+      h4 {
+        z-index: 2;
       }
 
       .active {
+        border: 2px solid rgba($color: #ffffff, $alpha: 0.25);
+        color: white;
         border-radius: 50%;
         height: 80px;
         width: 80px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        user-select: none;
-        cursor: pointer;
 
         background-color: white;
-        color: black;
+        position: absolute;
+        top: -2px;
+        left: -2px;
       }
     }
 
