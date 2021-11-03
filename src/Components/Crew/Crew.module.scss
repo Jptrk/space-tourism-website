@@ -1,0 +1,155 @@
+.crewMain {
+  color: white;
+  display: flex;
+  min-height: 700px;
+
+  .details {
+    width: 60%;
+    margin-top: 154px;
+    padding-bottom: 94px;
+    min-width: 620px;
+
+    .role {
+      color: rgba($color: #ffffff, $alpha: 0.5);
+      margin-bottom: 15px;
+    }
+
+    .name {
+      margin-bottom: 27px;
+    }
+
+    .info {
+      max-height: 128px;
+      max-width: 444px;
+      margin-bottom: 120px;
+    }
+
+    .carouselControl {
+      display: flex;
+      gap: 24px;
+
+      .circle {
+        width: 15px;
+        height: 15px;
+        background-color: rgba($color: #ffffff, $alpha: 17.44%);
+        border-radius: 50%;
+        cursor: pointer;
+
+        .active {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  .carousel {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid #383b4b;
+  }
+
+  //---------------//
+  //--- Desktop ---//
+  //---------------//
+  @media (max-width: 1440px) {
+  }
+
+  @media (max-width: 1366px) {
+    padding: 0 55px;
+  }
+
+  //--------------//
+  //--- Laptop ---//
+  //--------------//
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 0;
+    min-height: 500px;
+    position: unset;
+    padding: 0 90px;
+
+    .details {
+      text-align: center;
+      margin: auto;
+      width: 100%;
+      margin-top: 60px;
+      min-width: unset;
+
+      .role {
+        margin-bottom: 8px;
+      }
+
+      .name {
+        margin-bottom: 16px;
+      }
+
+      .info {
+        margin: auto;
+        max-height: initial;
+        margin-bottom: 40px;
+        max-width: unset;
+        p {
+          -webkit-line-clamp: 3;
+        }
+      }
+    }
+
+    .carouselControl {
+      justify-content: center;
+    }
+
+    .carousel {
+      justify-content: center;
+      img {
+        width: auto;
+        height: 572px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel {
+      img {
+        width: auto;
+        height: 572px;
+      }
+    }
+  }
+
+  //--------------//
+  //--- Mobile ---//
+  //--------------//
+  @media (max-width: 640px) {
+    padding: 0 24px;
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column-reverse;
+
+    .carousel {
+      margin: 33px 0;
+
+      img {
+        width: auto;
+        height: 222px;
+      }
+    }
+
+    .details {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column-reverse;
+
+      .info {
+        margin-bottom: 0;
+      }
+
+      .carouselControl {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

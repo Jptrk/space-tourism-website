@@ -10,6 +10,7 @@
 
 body {
   background-color: black;
+  overflow-x: hidden;
 }
 
 a {
@@ -53,14 +54,29 @@ h2 {
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 56px;
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 24px;
+  }
 }
 
 h4 {
   font-size: 32px;
 
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
   @media (max-width: 640px) {
     font-size: 20px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 16px;
   }
 }
 

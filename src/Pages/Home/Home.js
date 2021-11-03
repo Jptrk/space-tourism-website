@@ -3,10 +3,18 @@ import styles from "./Home.module.scss";
 //Library
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+//Variants
+import { inout } from "../../Util/Variants.js";
 
 const Home = () => {
   return (
-    <main className={styles.main}>
+    <motion.main
+      className={styles.main}
+      variants={inout}
+      initial="initial"
+      animate="in"
+      exit="out"
+    >
       <motion.article
         className={styles.article}
         initial={{ opacity: 0 }}
@@ -29,7 +37,7 @@ const Home = () => {
           </Link>
         </div>
       </motion.article>
-    </main>
+    </motion.main>
   );
 };
 

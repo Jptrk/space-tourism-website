@@ -1,11 +1,14 @@
 //Style
 import styles from "./Destination.module.scss";
 //Data
-import { data } from "../../Util/data.js";
+import { data } from "../../Util/data";
 //Components
-import Planet from "../../Components/Planet/Planet";
+import Planet from "../Planet/Planet";
 //Library
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+//Variants
+import { inout } from "../../Util/Variants";
 
 const Destination = () => {
   const [planet, setPlanet] = useState("MOON");
@@ -20,12 +23,13 @@ const Destination = () => {
   }, [planet]);
 
   return (
-    <main className={styles.main}>
-      <div className={styles.header}>
-        <h5 className={styles.headerlabel}>
-          <span>01</span>Pick your destination
-        </h5>
-      </div>
+    <motion.main
+      className={styles.main}
+      variants={inout}
+      initial="initial"
+      animate="in"
+      exit="out"
+    >
       <div className={styles.planet}>
         {destination.length > 0 && (
           <Planet
@@ -35,7 +39,7 @@ const Destination = () => {
           />
         )}
       </div>
-    </main>
+    </motion.main>
   );
 };
 

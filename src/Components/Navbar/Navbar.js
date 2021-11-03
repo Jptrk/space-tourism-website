@@ -107,13 +107,15 @@ const Navbar = () => {
                   <p className="link">Destination</p>
                 </Link>
               </li>
-              <li>
-                <Link to="/">
+              <li className={`${location === "/crew" ? "active-page" : ""}`}>
+                <Link to="/crew">
                   <p className="link">Crew</p>
                 </Link>
               </li>
-              <li>
-                <Link to="/">
+              <li
+                className={`${location === "/technology" ? "active-page" : ""}`}
+              >
+                <Link to="/technology">
                   <p className="link">Technology</p>
                 </Link>
               </li>
