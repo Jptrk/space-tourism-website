@@ -1,0 +1,10 @@
+.layout__input {
+  padding: 0.5rem;
+  border: none;
+  outline: 2px solid black;
+}
+
+
+.layout__input--error {
+    outline-color: rgb(255, 17, 0);
+}
